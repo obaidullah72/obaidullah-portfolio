@@ -2245,22 +2245,30 @@ form .site-btn{
 .scroll-animation-on .clip-animation{
 	clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
 	-webkit-clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+	transition: clip-path 0.5s ease-out; /* Reduced from 1.5s */
 }
 
 .scroll-animation-on .clip-animation.from-left{
 	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
 	-webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+	transition: clip-path 0.5s ease-out; /* Reduced from 1.5s */
+
 }
 
 .scroll-animation-on .clip-animation.from-top{
 	clip-path: polygon(-2% 0%, 100% 0%, 105% 0%, 0% 0%);
 	-webkit-clip-path: polygon(-2% 0%, 100% 0%, 105% 0%, 0% 0%);
+	transition: clip-path 0.5s ease-out; /* Reduced from 1.5s */
+
 }
+
 
 
 .scroll-animation-on .clip-animation.from-bottom{
     clip-path: polygon(0 100%,100% 100%,100% 100%,0 100%);
 	-webkit-clip-path: polygon(0 100%,100% 100%,100% 100%,0 100%);
+	transition: clip-path 0.5s ease-out; /* Reduced from 1.5s */
+
 }
 
 .scroll-animation-on .scale-animation{
@@ -2744,4 +2752,162 @@ form .site-btn{
 	}
 }
 
+
+/* Accent text color for blue/cyan theme */
+.text-accent {
+  color: #00FFFF !important;
+}
+
+
+/* Modern card and section improvements */
+.section-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.card-modern {
+  background: rgba(0, 255, 255, 0.07);
+  border: 1.5px solid #00FFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,255,255,0.07);
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card-modern:hover {
+  box-shadow: 0 8px 32px rgba(0,255,255,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.section-title.page-caption {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .section-flex {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card-modern {
+    padding: 24px 12px;
+  }
+}
+
+/* Add more vertical space between sections */
+.spacer-75, .spacer-45 {
+  height: 48px;
+}
+
+/* Responsive fix for nav hamburger */
+.hamburger {
+  z-index: 1001;
+}
+
+/* Improve section padding */
+.page-wrapper {
+  padding: 48px 16px;
+}
+
+/* Make headings bolder and larger */
+h2, h4, h5 {
+  font-weight: 700;
+}
+
+
+/* Modern Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 28px;
+  margin: 32px 0 0 0;
+  justify-items: center;
+}
+.skill-card {
+  background: rgba(0,255,255,0.06);
+  border: 1.5px solid #00FFFF;
+  border-radius: 14px;
+  padding: 28px 10px 18px 10px;
+  text-align: center;
+  box-shadow: 0 2px 16px rgba(0,255,255,0.07);
+  transition: box-shadow 0.3s, transform 0.3s;
+  color: #fff;
+  min-width: 110px;
+  max-width: 160px;
+}
+.skill-card i {
+  font-size: 2.2rem;
+  color: #00FFFF;
+  margin-bottom: 10px;
+  display: block;
+}
+.skill-card span {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #00FFFF;
+}
+.skill-card:hover {
+  box-shadow: 0 6px 32px rgba(0,255,255,0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+
+/* Modern Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin: 32px 0 0 0;
+}
+.service-card-modern {
+  background: rgba(0,255,255,0.06);
+  border: 1.5px solid #00FFFF;
+  border-radius: 16px;
+  padding: 36px 24px 28px 24px;
+  text-align: center;
+  box-shadow: 0 2px 16px rgba(0,255,255,0.07);
+  transition: box-shadow 0.3s, transform 0.3s;
+  color: #fff;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.service-card-modern i {
+  font-size: 2.5rem;
+  color: #00FFFF;
+  margin-bottom: 16px;
+  display: block;
+}
+.service-card-modern h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.service-card-modern p {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 1.05rem;
+}
+.service-card-modern:hover {
+  box-shadow: 0 8px 32px rgba(0,255,255,0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Section backgrounds and spacing */
+.hero-modern {
+  background: linear-gradient(120deg, #10131a 60%, #0a0a0a 100%);
+  border-radius: 18px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 700px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .hero-modern {
+    padding: 32px 0 24px 0 !important;
+  }
+}
 
