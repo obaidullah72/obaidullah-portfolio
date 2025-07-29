@@ -33,7 +33,7 @@
 <div id="loader" class="preloader">
   <div class="loading">
     <div class="profile-image">
-      <img src="images/profile.jpg" alt="">
+      <img src="images/profile.png" alt="">
       <svg style="position: absolute;" width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
         <circle class="js-circle circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
         <circle class="js-circle circletwo" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none"  />
@@ -69,8 +69,8 @@
             <section class="hero">
               <div class="row">
                 <div class="col-xl-3 col-lg-4 col-md-6 profile-pic">
-                  <div class="image clip-animation from-left" style="background-image: url(images/profile.jpg);">
-                    <img src="images/profile.jpg" alt="">
+                  <div class="image clip-animation from-left" style="background-image: url(images/profile.png);">
+                    <img src="images/profile.png" alt="">
                   </div>
                   <div class="social-links clip-animation">
                     <ul>
@@ -170,137 +170,97 @@
 
             <div class="spacer-60"></div>
 
-            <div class="skills">
+            <div class="skills-section">
               <h5 class="underline-title classic-animation">My Skills</h5>
               <div class="spacer-60"></div>
-              <div class="row">
-                <!-- 90% Skills -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,255,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,255,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#00FFFF; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-python" style="color:#00FFFF;font-size:1.5rem;margin-right:10px;"></i>Python</span>
-                      <span style="color:#00FFFF;font-weight:700;">90%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="90%" style="width:90%;background:#00FFFF;height:100%;border-radius:4px;"></div>
-                    </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon python"><i class="fa-brands fa-python"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">90%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,255,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,255,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="display:flex;align-items:center;font-size:1.1rem;font-weight:600;color:#00FFFF;"><i class="fa-brands fa-android" style="color:#00FFFF;font-size:1.5rem;margin-right:10px;"></i>Flutter</span>
-                      <span style="color:#00FFFF;font-weight:700;">90%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="90%" style="width:90%;background:#00FFFF;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon flutter"><i class="fa-brands fa-android"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">Flutter</span>
+                    <span class="skill-percent">90%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background: rgba(0, 255, 255, 0.07); border-radius: 16px; padding: 24px 18px; box-shadow: 0 2px 12px rgba(0, 255, 255, 0.05);">
-                    <div class="bar-info" style="display: flex; align-items: center; justify-content: space-between;">
-                      <span style="display: flex; align-items: center; font-size: 1.1rem; font-weight: 600; color: #00FFFF;">
-                        <i class="fa-solid fa-d" style="color: #00FFFF; font-size: 1.5rem; margin-right: 10px;"></i>
-                        Django
-                      </span>
-                      <span style="color: #00FFFF; font-weight: 700;">90%</span>
-                    </div>
-                    <div class="progress" style="height: 8px; background: #222c38; margin-top: 12px; border-radius: 4px;">
-                      <div class="percentage" style="width: 90%; background: #00FFFF; height: 100%; border-radius: 4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon django"><i class="fa-solid fa-d"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">Django</span>
+                    <span class="skill-percent">90%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
-                
-                <!-- 70% Skills -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,191,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,191,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#1de9b6; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-html5" style="color:#1de9b6;font-size:1.5rem;margin-right:10px;"></i>HTML</span>
-                      <span style="color:#1de9b6;font-weight:700;">70%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="70%" style="width:70%;background:#1de9b6;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon html"><i class="fa-brands fa-html5"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percent">70%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,191,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,191,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#1de9b6; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-css3-alt" style="color:#1de9b6;font-size:1.5rem;margin-right:10px;"></i>CSS</span>
-                      <span style="color:#1de9b6;font-weight:700;">70%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="70%" style="width:70%;background:#1de9b6;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon css"><i class="fa-brands fa-css3-alt"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percent">70%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,191,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,191,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#1de9b6; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-js" style="color:#1de9b6;font-size:1.5rem;margin-right:10px;"></i>JavaScript</span>
-                      <span style="color:#1de9b6;font-weight:700;">70%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="70%" style="width:70%;background:#1de9b6;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon js"><i class="fa-brands fa-js"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">70%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,191,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,191,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#1de9b6; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-node-js" style="color:#1de9b6;font-size:1.5rem;margin-right:10px;"></i>NodeJS</span>
-                      <span style="color:#1de9b6;font-weight:700;">70%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="70%" style="width:70%;background:#1de9b6;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon node"><i class="fa-brands fa-node-js"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">NodeJS</span>
+                    <span class="skill-percent">70%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(0,255,191,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(0,255,191,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#1de9b6; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-solid fa-database" style="color:#1de9b6;font-size:1.5rem;margin-right:10px;"></i>Data Science</span>
-                      <span style="color:#1de9b6;font-weight:700;">70%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="70%" style="width:70%;background:#1de9b6;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon data"><i class="fa-solid fa-database"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">Data Science</span>
+                    <span class="skill-percent">70%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="70%"></div></div>
                 </div>
-                <!-- 50% Skills -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(156,39,176,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(156,39,176,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#9c27b0; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-brands fa-react" style="color:#9c27b0;font-size:1.5rem;margin-right:10px;"></i>ReactJS</span>
-                      <span style="color:#9c27b0;font-weight:700;">50%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="50%" style="width:50%;background:#9c27b0;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon react"><i class="fa-brands fa-react"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">ReactJS</span>
+                    <span class="skill-percent">50%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(156,39,176,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(156,39,176,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#9c27b0; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-solid fa-brain" style="color:#9c27b0;font-size:1.5rem;margin-right:10px;"></i>AI</span>
-                      <span style="color:#9c27b0;font-weight:700;">50%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="50%" style="width:50%;background:#9c27b0;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon ai"><i class="fa-solid fa-brain"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">AI</span>
+                    <span class="skill-percent">50%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 skill-card classic-animation" style="margin-bottom: 30px;">
-                  <div class="skill-box" style="background:rgba(156,39,176,0.07);border-radius:16px;padding:24px 18px;box-shadow:0 2px 12px rgba(156,39,176,0.05);">
-                    <div class="bar-info" style="display:flex;align-items:center;justify-content:space-between;">
-                      <span style="color:#9c27b0; display:flex;align-items:center;font-size:1.1rem;font-weight:600;"><i class="fa-solid fa-robot" style="color:#9c27b0;font-size:1.5rem;margin-right:10px;"></i>Machine Learning</span>
-                      <span style="color:#9c27b0;font-weight:700;">50%</span>
-                    </div>
-                    <div class="progress" style="height:8px;background:#222c38;margin-top:12px;border-radius:4px;">
-                      <div class="percentage" data-percent="50%" style="width:50%;background:#9c27b0;height:100%;border-radius:4px;"></div>
-                    </div>
+                <div class="skill-card">
+                  <div class="skill-icon ml"><i class="fa-solid fa-robot"></i></div>
+                  <div class="skill-info">
+                    <span class="skill-name">Machine Learning</span>
+                    <span class="skill-percent">50%</span>
                   </div>
+                  <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
                 </div>
               </div>
             </div>
@@ -335,6 +295,16 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3gqyHylICdokv-P1q2WtRihCFhiFnm_U&sensor=false"></script>
 <script src="js/map.js"></script>
 <script src="js/main.js"></script>
+<script>
+// Animate skill bars on load
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.skill-bar-inner').forEach(function(bar) {
+    setTimeout(function() {
+      bar.style.width = bar.getAttribute('data-width');
+    }, 300);
+  });
+});
+</script>
     
 </body>
 </html>
