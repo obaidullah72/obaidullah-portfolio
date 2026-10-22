@@ -1,6 +1,7 @@
-import { Check, FileText, Mic, Save, Search, Share2, ShoppingCart, Sparkles } from 'lucide-react'
+import { Check, FileText, Mic, Save, Search, Share2, Sparkles } from 'lucide-react'
 
-// Illustrative, CSS-only previews of each project's interface. Purely decorative.
+// Illustrative, CSS-only previews for projects without screenshots. Sample
+// content inside them is placeholder text, not data from the real apps.
 
 function Window({ title, children, className = '' }) {
   return (
@@ -230,30 +231,91 @@ function DocumentPreview() {
   )
 }
 
-const covers = [
-  'from-[#1e3a8a] to-[#3b82f6]',
-  'from-[#312e81] to-[#6366f1]',
-  'from-[#0c4a6e] to-[#0ea5e9]',
-  'from-[#1e293b] to-[#475569]',
+const leads = [
+  ['Bright Dental Care', 'Dentists', 'Austin, TX'],
+  ['Northside Plumbing', 'Plumbers', 'Denver, CO'],
+  ['Oak & Iron Fitness', 'Gyms', 'Tampa, FL'],
+  ['Lakeview Auto Repair', 'Auto Repair', 'Columbus, OH'],
 ]
 
-function StorePreview() {
+function TablePreview() {
   return (
-    <Window title="ebook / browse" className="max-w-sm">
+    <Window title="leadharvester / businesses" className="max-w-md">
       <div className="p-4">
-        <div className="flex items-center justify-between">
-          <Line w="35%" className="bg-fg/60" />
-          <span className="relative text-muted">
-            <ShoppingCart className="size-3.5" />
-            <span className="absolute -top-1 -right-1.5 size-2 rounded-full bg-brand-bright" />
-          </span>
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 rounded-md border border-line bg-ink-900 px-2.5 py-1.5 text-[10px] text-subtle">
+            <Search className="size-3" /> Search leads
+          </div>
+          <div className="flex gap-1">
+            {['CSV', 'XLSX', 'JSON'].map((format) => (
+              <span key={format} className="rounded bg-brand/15 px-1.5 py-1 font-mono text-[9px] text-brand-bright">
+                {format}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="mt-4 grid grid-cols-4 gap-2">
-          {covers.map((cover) => (
-            <div key={cover}>
-              <div className={`aspect-[3/4] rounded-md bg-linear-to-br ${cover} shadow-lg shadow-black/30`} />
-              <Line w="80%" className="mt-1.5 bg-ink-600" />
+        <div className="overflow-hidden rounded-lg border border-line text-[10px]">
+          <div className="grid grid-cols-[1.4fr_1fr_1fr] gap-2 bg-ink-900 px-3 py-2 font-mono text-[9px] tracking-wider text-subtle uppercase">
+            <span>Business</span>
+            <span>Category</span>
+            <span>Location</span>
+          </div>
+          {leads.map(([name, category, location]) => (
+            <div key={name} className="grid grid-cols-[1.4fr_1fr_1fr] gap-2 border-t border-line px-3 py-2 text-muted">
+              <span className="truncate text-fg">{name}</span>
+              <span className="truncate">{category}</span>
+              <span className="truncate">{location}</span>
             </div>
+          ))}
+        </div>
+        <p className="mt-3 flex items-center gap-1.5 font-mono text-[9px] text-subtle">
+          <span className="size-1.5 rounded-full bg-cyan" /> Scheduler · next run in 30 min
+        </p>
+      </div>
+    </Window>
+  )
+}
+
+function StreamPreview() {
+  return (
+    <Window title="llm-stream / gemini" className="max-w-md">
+      <div className="space-y-3 p-4">
+        <div className="flex gap-2">
+          <span className="flex-1 truncate rounded-md border border-line bg-ink-900 px-3 py-2 text-[11px] text-muted">
+            What is retrieval-augmented generation?
+          </span>
+          <span className="rounded-md bg-brand px-3 py-2 text-[11px] text-white">Send</span>
+        </div>
+        <p className="min-h-20 rounded-md border border-line bg-ink-900/70 p-3 text-[11px] leading-relaxed text-muted">
+          Retrieval-augmented generation pairs a language model with a search step, so answers are grounded in
+          <span className="ml-1 inline-block h-3 w-1.5 animate-blink bg-brand-bright align-middle" />
+        </p>
+        <p className="font-mono text-[9px] text-subtle">StreamingHttpResponse · chunk 14</p>
+      </div>
+    </Window>
+  )
+}
+
+const chartBars = [42, 58, 51, 74, 66, 88, 71, 62, 79, 55, 60, 38]
+
+function ChartPreview() {
+  return (
+    <Window title="analysis.ipynb" className="max-w-md">
+      <div className="p-4">
+        <p className="font-mono text-[10px] text-subtle">In [12]:</p>
+        <p className="mb-3 font-mono text-[10px] text-muted">
+          df.groupby(<span className="text-[#86efac]">'month'</span>)[<span className="text-[#86efac]">'sales'</span>].sum().plot()
+        </p>
+        <div className="flex h-24 items-end gap-1.5 border-b border-l border-line pb-px pl-px">
+          {chartBars.map((h, i) => (
+            <span key={i} className="flex-1 rounded-t-sm bg-linear-to-t from-brand/50 to-brand-bright" style={{ height: `${h}%` }} />
+          ))}
+        </div>
+        <div className="mt-3 grid grid-cols-3 gap-2 font-mono text-[9px]">
+          {['pandas', 'matplotlib', 'scikit-learn'].map((lib) => (
+            <span key={lib} className="truncate rounded bg-ink-900 px-2 py-1 text-center text-muted">
+              {lib}
+            </span>
           ))}
         </div>
       </div>
@@ -268,7 +330,9 @@ const variants = {
   waveform: WaveformPreview,
   'phone-habits': HabitsPhonePreview,
   document: DocumentPreview,
-  store: StorePreview,
+  table: TablePreview,
+  stream: StreamPreview,
+  chart: ChartPreview,
 }
 
 export default function ProjectPreview({ type, className = '' }) {

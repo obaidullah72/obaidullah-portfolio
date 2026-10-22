@@ -49,3 +49,69 @@
   border-color: rgb(96 165 250 / 0.35);
   box-shadow: 0 20px 50px -25px rgb(59 130 246 / 0.35);
 }
+
+/* Project card depth: tilt toward the pointer, a soft spotlight, and the preview
+   layer drifting slightly against the tilt. Variables are set in ProjectCard.jsx. */
+.tilt-card {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 0.25s ease-out,
+    translate 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+  will-change: transform;
+}
+
+.tilt-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(96 165 250 / 0.12), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tilt-layer > :first-child {
+  transform: translate(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px)) scale(1.04);
+  transition: transform 0.3s ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tilt-card:hover {
+    translate: 0 -4px;
+  }
+
+  .tilt-card:hover::before {
+    opacity: 1;
+  }
+}
+
+
+/* About page: three stacked planes in isometric perspective, drifting slowly. */
+.layer-stack {
+  perspective: 1100px;
+}
+
+.layer-stack-inner {
+  transform-style: preserve-3d;
+  transform: rotateX(58deg) rotateZ(-38deg);
+  animation: layer-drift 14s ease-in-out infinite;
+}
+
+.layer-plane {
+  transform: translateY(-50%) translateZ(calc((1 - var(--i)) * 70px));
+  box-shadow: 0 30px 60px -30px rgb(59 130 246 / 0.6);
+}
+
+@keyframes layer-drift {
+  0%,
+  100% {
+    transform: rotateX(58deg) rotateZ(-38deg);
+  }
+  50% {
+    transform: rotateX(54deg) rotateZ(-30deg);
+  }
+}
