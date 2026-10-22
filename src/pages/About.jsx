@@ -55,7 +55,7 @@ export default function About() {
       />
 
       <div className="space-y-24 pb-24 md:space-y-32 md:pb-32">
-        <section className="container-page grid items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-20">
+        <section className="container-page grid grid-cols-[minmax(0,1fr)] items-center gap-12 overflow-x-clip lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-20">
           <Reveal className="space-y-6 text-lg leading-relaxed text-pretty text-muted md:text-xl md:leading-relaxed">
             <p>
               <span className="text-fg">Software development.</span> Over roughly three years I’ve built React

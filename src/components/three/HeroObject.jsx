@@ -9,9 +9,9 @@ const CYAN = '#22d3ee'
 
 // Orbits suggest data moving between services around a central system.
 const ORBITS = [
-  { radius: 2.05, tilt: [Math.PI / 2.3, 0, 0.2], speed: 0.5, start: 0.4, color: BRIGHT },
-  { radius: 2.45, tilt: [Math.PI / 1.7, 0.5, -0.4], speed: -0.35, start: 2.6, color: BLUE },
-  { radius: 2.85, tilt: [Math.PI / 2.1, -0.7, 0.9], speed: 0.25, start: 4.4, color: CYAN },
+  { radius: 2.05, tilt: [1.15, 0.35, 0.2], speed: 0.5, start: 0.4, color: BRIGHT },
+  { radius: 2.45, tilt: [1.9, -0.45, -0.5], speed: -0.35, start: 2.6, color: BLUE },
+  { radius: 2.85, tilt: [1.35, 0.6, 1.1], speed: 0.25, start: 4.4, color: CYAN },
 ]
 
 // Points in a spherical shell around the object, generated once per page load.
@@ -100,8 +100,9 @@ export default function HeroObject({ animate = true, trackPointer = false }) {
 
   return (
     <>
-      <ambientLight intensity={0.35} />
-      <directionalLight position={[4, 5, 5]} intensity={2.2} />
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[4, 5, 5]} intensity={3} />
+      <directionalLight position={[-5, 2, -3]} intensity={1.2} color={CYAN} />
       <pointLight position={[-4, -2, 3]} intensity={40} color={BLUE} />
       <pointLight position={[3, -3, -2]} intensity={25} color={CYAN} />
 
@@ -109,7 +110,7 @@ export default function HeroObject({ animate = true, trackPointer = false }) {
         <Float enabled={animate} speed={1.2} rotationIntensity={0.25} floatIntensity={0.5}>
           <mesh ref={core}>
             <icosahedronGeometry args={[1.1, 1]} />
-            <meshStandardMaterial color="#1e3a8a" metalness={0.65} roughness={0.22} emissive="#0b1d4a" flatShading />
+            <meshStandardMaterial color="#2563eb" metalness={0.45} roughness={0.28} emissive="#0c2461" flatShading />
           </mesh>
           <mesh ref={shell} scale={1.5}>
             <icosahedronGeometry args={[1.1, 1]} />

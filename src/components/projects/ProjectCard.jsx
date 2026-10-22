@@ -42,7 +42,7 @@ export default function ProjectCard({ project, headingLevel: Heading = 'h3' }) {
   const repo = project.repositories[0]
 
   return (
-    <div className="[perspective:1200px]">
+    <div className="h-full [perspective:1200px]">
       <article
         ref={card}
         onPointerMove={onPointerMove}

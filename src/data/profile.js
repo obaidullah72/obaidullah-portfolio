@@ -31,8 +31,8 @@ export const highlights = [
   },
   {
     id: 'data',
-    value: 4,
-    suffix: '–5+ yrs',
+    value: '4–5+',
+    suffix: ' yrs',
     label: 'Data science involvement',
     detail: 'Analysis, experimentation and implementation at an intermediate level.',
   },

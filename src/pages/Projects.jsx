@@ -29,7 +29,9 @@ export default function Projects() {
   const results = useMemo(() => filterProjects({ category, technology, query }), [category, technology, query])
 
   const updateFilters = (changes) => {
-    const next = new URLSearchParams(params)
+    // Read the live URL rather than the last render's params so rapid successive
+    // changes (click a category, then type) never resurrect a stale filter.
+    const next = new URLSearchParams(window.location.search)
     Object.entries(changes).forEach(([key, value]) => (value ? next.set(key, value) : next.delete(key)))
     setParams(next, { replace: 'q' in changes, preventScrollReset: true })
   }

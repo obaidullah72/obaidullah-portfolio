@@ -18,7 +18,11 @@ export default function Highlights() {
             className={`p-6 md:p-8 ${index > 0 ? 'border-t border-line sm:border-t-0 sm:border-l' : ''}`}
           >
             <p className="text-4xl font-semibold tracking-tight text-fg md:text-5xl">
-              <Counter value={item.value} prefix={item.prefix} suffix={item.suffix} />
+              {typeof item.value === 'number' ? (
+                <Counter value={item.value} prefix={item.prefix} suffix={item.suffix} />
+              ) : (
+                `${item.value}${item.suffix}`
+              )}
             </p>
             <p className="mt-3 font-medium text-fg">{item.label}</p>
             <p className="mt-1 text-sm leading-relaxed text-muted">{item.detail}</p>

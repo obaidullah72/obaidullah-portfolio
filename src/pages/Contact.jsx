@@ -34,7 +34,7 @@ export default function Contact() {
         description="Whether it’s a full-time role, a freelance project or a collaboration, I’d like to hear about it. Email is the fastest way to reach me."
       />
 
-      <section className="container-page relative grid gap-10 pb-24 md:pb-32 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
+      <section className="container-page relative grid grid-cols-[minmax(0,1fr)] gap-10 pb-24 md:pb-32 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
         <div className="glow top-40 -left-40 size-[420px] opacity-40" aria-hidden="true" />
 
         <Reveal className="relative space-y-4">

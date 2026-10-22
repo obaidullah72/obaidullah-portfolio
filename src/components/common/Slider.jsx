@@ -127,7 +127,7 @@ export default function Slider({
       </div>
 
       {count > 1 && (
-        <div className="mt-6 flex items-center justify-between gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
           <div className="flex items-center gap-1.5" role="group" aria-label="Choose slide">
             {items.map((slide, i) => (
               <button
@@ -136,7 +136,7 @@ export default function Slider({
                 onClick={() => goTo(i)}
                 aria-label={`Go to slide ${getSlideLabel(slide, i)}`}
                 aria-current={i === index ? 'true' : undefined}
-                className="group grid h-8 place-items-center px-1"
+                className="group grid h-8 place-items-center px-0.5 sm:px-1"
               >
                 <span
                   className={`block h-1.5 rounded-full transition-all duration-300 ${

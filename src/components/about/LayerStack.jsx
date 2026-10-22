@@ -12,7 +12,7 @@ export default function LayerStack() {
         {layers.map((layer, index) => (
           <div
             key={layer.label}
-            className={`layer-plane absolute inset-x-[12%] top-1/2 h-[46%] rounded-2xl border border-brand/40 bg-linear-to-br ${layer.tone} p-5`}
+            className={`layer-plane absolute inset-x-[17%] top-1/2 h-[46%] rounded-2xl border border-brand/40 bg-linear-to-br ${layer.tone} p-5`}
             style={{ '--i': index }}
           >
             <p className="font-mono text-[11px] tracking-[0.15em] text-brand-bright uppercase">{layer.label}</p>

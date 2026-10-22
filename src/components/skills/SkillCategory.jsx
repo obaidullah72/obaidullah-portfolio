@@ -12,7 +12,7 @@ function LevelMeter({ level }) {
           <span key={name} className={`h-1.5 w-3 rounded-full ${i < filled ? 'bg-brand-bright' : 'bg-ink-600'}`} />
         ))}
       </span>
-      <span className="w-32 text-right text-xs text-muted sm:w-36">{level}</span>
+      <span className="text-xs text-muted sm:w-36 sm:text-right">{level}</span>
     </span>
   )
 }
@@ -45,7 +45,7 @@ export default function SkillCategory({ category, delay = 0, compact = false }) 
       ) : (
         <ul className="mt-5 divide-y divide-line">
           {category.skills.map((skill) => (
-            <li key={skill.name} className="flex items-center justify-between gap-3 py-2.5 text-sm">
+            <li key={skill.name} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 py-2.5 text-sm">
               <span className="text-[#e2e8f0]">{skill.name}</span>
               <LevelMeter level={skill.level} />
             </li>

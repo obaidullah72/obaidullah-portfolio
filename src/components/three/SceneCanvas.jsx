@@ -1,11 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { AdaptiveDpr } from '@react-three/drei'
 import HeroObject from './HeroObject.jsx'
 
+// Signals once the scene has actually rendered a frame at its measured size.
+function ReadySignal({ onReady }) {
+  const done = useRef(false)
+  useFrame(() => {
+    if (done.current) return
+    done.current = true
+    requestAnimationFrame(() => onReady?.())
+  })
+  return null
+}
+
 // Owns the WebGL canvas. Rendering stops while the scene is off-screen and
 // switches to on-demand (a single static frame) when motion is reduced.
-export default function SceneCanvas({ reducedMotion, trackPointer }) {
+export default function SceneCanvas({ reducedMotion, trackPointer, onReady }) {
   const wrapper = useRef(null)
   const [visible, setVisible] = useState(true)
 
@@ -27,6 +38,7 @@ export default function SceneCanvas({ reducedMotion, trackPointer }) {
         aria-hidden="true"
       >
         <AdaptiveDpr pixelated={false} />
+        <ReadySignal onReady={onReady} />
         <HeroObject animate={!reducedMotion} trackPointer={trackPointer && !reducedMotion} />
       </Canvas>
     </div>
