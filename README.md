@@ -54,7 +54,7 @@ npm run preview   # serve the production build locally
 ```text
 public/
   images/projects/<slug>/   real screenshots and charts (WebP)
-  favicon.svg, favicon.png, og-image.png, resume.pdf
+  favicon.png (avatar, also used on the loading screen), og-image.png, resume.pdf
   _redirects                SPA fallback for Netlify
 src/
   assets/images/            avatar

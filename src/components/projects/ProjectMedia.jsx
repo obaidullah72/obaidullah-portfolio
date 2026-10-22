@@ -1,8 +1,9 @@
 import ProjectPreview from './ProjectPreview.jsx'
 
-// Real screenshot when the project has one, otherwise its illustrated preview.
+// Designed cover if the project has one, then its first real screenshot,
+// otherwise its illustrated preview.
 export default function ProjectMedia({ project, className = '', eager = false }) {
-  const cover = project.screenshots[0]
+  const cover = project.cover ?? project.screenshots[0]
   if (!cover) return <ProjectPreview type={project.preview} className={className} />
 
   return (
