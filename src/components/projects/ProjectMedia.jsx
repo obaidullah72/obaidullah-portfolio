@@ -15,7 +15,8 @@ export default function ProjectMedia({ project, className = '', eager = false })
         height={cover.height}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
-        className="absolute inset-0 size-full object-cover object-top"
+        // Covers share the page background, so letterboxing them is seamless and nothing gets cropped
+        className={`absolute inset-0 size-full ${project.cover ? 'object-contain' : 'object-cover object-top'}`}
       />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink-950/50 via-transparent to-transparent" />
     </div>
