@@ -1,0 +1,51 @@
+/* Component-level styles that are clearer as plain CSS than as utility strings. */
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-brand);
+  color: #fff;
+  font-weight: 500;
+  transform: translateY(-200%);
+  transition: transform 0.2s;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Soft ambient light behind key sections */
+.glow {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgb(59 130 246 / 0.28), transparent 70%);
+}
+
+/* Thin hairline that brightens at its center, used as section dividers */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-line-strong), transparent);
+}
+
+/* Card border that picks up a blue edge on hover */
+.card-surface {
+  position: relative;
+  background: linear-gradient(180deg, rgb(17 29 51 / 0.9), rgb(14 22 40 / 0.9));
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  transition:
+    border-color 0.25s,
+    translate 0.25s,
+    box-shadow 0.25s;
+}
+
+.card-surface:hover {
+  border-color: rgb(96 165 250 / 0.35);
+  box-shadow: 0 20px 50px -25px rgb(59 130 246 / 0.35);
+}
