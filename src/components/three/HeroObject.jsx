@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Float } from '@react-three/drei'
 import * as THREE from 'three'
@@ -9,14 +9,29 @@ const CYAN = '#22d3ee'
 
 // Orbits suggest data moving between services around a central system.
 const ORBITS = [
-  { radius: 2.05, tilt: [Math.PI / 2.3, 0, 0.2], speed: 0.5, color: BRIGHT },
-  { radius: 2.45, tilt: [Math.PI / 1.7, 0.5, -0.4], speed: -0.35, color: BLUE },
-  { radius: 2.85, tilt: [Math.PI / 2.1, -0.7, 0.9], speed: 0.25, color: CYAN },
+  { radius: 2.05, tilt: [Math.PI / 2.3, 0, 0.2], speed: 0.5, start: 0.4, color: BRIGHT },
+  { radius: 2.45, tilt: [Math.PI / 1.7, 0.5, -0.4], speed: -0.35, start: 2.6, color: BLUE },
+  { radius: 2.85, tilt: [Math.PI / 2.1, -0.7, 0.9], speed: 0.25, start: 4.4, color: CYAN },
 ]
 
-function Orbit({ radius, tilt, speed, color, animate }) {
+// Points in a spherical shell around the object, generated once per page load.
+const PARTICLE_POSITIONS = (() => {
+  const count = 320
+  const array = new Float32Array(count * 3)
+  for (let i = 0; i < count; i++) {
+    const r = 3.2 + Math.random() * 3
+    const theta = Math.random() * Math.PI * 2
+    const phi = Math.acos(2 * Math.random() - 1)
+    array[i * 3] = r * Math.sin(phi) * Math.cos(theta)
+    array[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
+    array[i * 3 + 2] = r * Math.cos(phi)
+  }
+  return array
+})()
+
+function Orbit({ radius, tilt, speed, start, color, animate }) {
   const node = useRef(null)
-  const angle = useRef(Math.random() * Math.PI * 2)
+  const angle = useRef(start)
 
   useFrame((_, delta) => {
     if (!animate || !node.current) return
@@ -30,7 +45,7 @@ function Orbit({ radius, tilt, speed, color, animate }) {
         <torusGeometry args={[radius, 0.006, 8, 160]} />
         <meshBasicMaterial color={color} transparent opacity={0.35} />
       </mesh>
-      <mesh ref={node} position={[radius, 0, 0]}>
+      <mesh ref={node} position={[Math.cos(start) * radius, Math.sin(start) * radius, 0]}>
         <sphereGeometry args={[0.055, 16, 16]} />
         <meshBasicMaterial color={color} toneMapped={false} />
       </mesh>
@@ -38,21 +53,7 @@ function Orbit({ radius, tilt, speed, color, animate }) {
   )
 }
 
-function Particles({ count = 320 }) {
-  const positions = useMemo(() => {
-    const array = new Float32Array(count * 3)
-    for (let i = 0; i < count; i++) {
-      // Points in a spherical shell around the object
-      const r = 3.2 + Math.random() * 3
-      const theta = Math.random() * Math.PI * 2
-      const phi = Math.acos(2 * Math.random() - 1)
-      array[i * 3] = r * Math.sin(phi) * Math.cos(theta)
-      array[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta)
-      array[i * 3 + 2] = r * Math.cos(phi)
-    }
-    return array
-  }, [count])
-
+function Particles() {
   const ref = useRef(null)
   useFrame((_, delta) => {
     if (ref.current) ref.current.rotation.y += delta * 0.02
@@ -61,7 +62,7 @@ function Particles({ count = 320 }) {
   return (
     <points ref={ref}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        <bufferAttribute attach="attributes-position" args={[PARTICLE_POSITIONS, 3]} />
       </bufferGeometry>
       <pointsMaterial color="#93c5fd" size={0.025} sizeAttenuation transparent opacity={0.55} depthWrite={false} />
     </points>

@@ -13,7 +13,13 @@ const shot = (slug, file, alt, caption, width = 1280, height = 800) => ({
   height,
 })
 
-export const CATEGORIES = ['Web Development', 'Mobile Applications', 'AI & Machine Learning', 'Data Science', 'Backend Development']
+export const CATEGORIES = [
+  'Web Development',
+  'Mobile Applications',
+  'AI & Machine Learning',
+  'Data Science',
+  'Backend Development',
+]
 
 export const projects = [
   {
@@ -30,12 +36,17 @@ export const projects = [
     ],
     overview: {
       what: 'Generates code from natural-language prompts and lets users keep or share the results.',
-      problem: 'Turning a short description into a usable starting snippet, then keeping a history of what was generated and shared.',
+      problem:
+        'Turning a short description into a usable starting snippet, then keeping a history of what was generated and shared.',
       audience: 'Developers; the sign-up form collects a GitHub URL and programming preferences.',
       objective: 'Combine LLM code generation with accounts, a saved-code library and one-click sharing.',
     },
     technologies: [
-      { name: 'React', role: 'Frontend UI', usage: 'Pages for generating, saving and reviewing code, built with Vite.' },
+      {
+        name: 'React',
+        role: 'Frontend UI',
+        usage: 'Pages for generating, saving and reviewing code, built with Vite.',
+      },
       { name: 'Redux Toolkit', role: 'State management', usage: 'Client-side auth and app state.' },
       { name: 'Tailwind CSS', role: 'Styling', usage: 'Utility-first styling via the @tailwindcss/vite plugin.' },
       { name: 'Node.js', role: 'Runtime', usage: 'Runs the REST API.' },
@@ -76,18 +87,25 @@ export const projects = [
     challenges: [
       {
         challenge: 'Letting users share code publicly without connecting their own GitHub accounts.',
-        solution: 'Gists are created server-side with a single token held in an environment variable, and the returned URL is stored against the user.',
+        solution:
+          'Gists are created server-side with a single token held in an environment variable, and the returned URL is stored against the user.',
       },
       {
         challenge: 'Password recovery without a third-party auth provider.',
-        solution: 'A six-digit code with a 10-minute expiry is stored on the user record and emailed through Nodemailer.',
+        solution:
+          'A six-digit code with a 10-minute expiry is stored on the user record and emailed through Nodemailer.',
       },
     ],
     planned: [],
     screenshotNote: 'Captured from the project’s own frontend running locally, without a connected backend.',
     screenshots: [
       shot('vox', 'login.webp', 'Vox login screen with an image panel and sign-in form', 'Login screen'),
-      shot('vox', 'signup.webp', 'Vox sign-up form with GitHub URL and programming preference fields', 'Developer sign-up'),
+      shot(
+        'vox',
+        'signup.webp',
+        'Vox sign-up form with GitHub URL and programming preference fields',
+        'Developer sign-up',
+      ),
       shot('vox', 'forgot-password.webp', 'Vox forgot-password screen', 'Password recovery'),
     ],
     repositories: [
@@ -106,21 +124,31 @@ export const projects = [
     category: 'AI & Machine Learning',
     categories: ['AI & Machine Learning', 'Backend Development'],
     featured: true,
-    summary: 'A FastAPI service that turns uploaded PDFs into a searchable knowledge base and answers questions with cited sources.',
+    summary:
+      'A FastAPI service that turns uploaded PDFs into a searchable knowledge base and answers questions with cited sources.',
     description: [
       'A retrieval-augmented generation (RAG) backend for chatting with PDF documents. Users upload files into a collection, build a FAISS vector index, and ask questions; answers are generated from the retrieved passages and cite the file and page they came from.',
       'The project includes a lightweight browser UI served from the same app, with a separate tab for speech-to-text using the browser’s Web Speech API.',
     ],
     overview: {
       what: 'Answers questions about a set of uploaded PDFs, with citations back to the source pages.',
-      problem: 'Finding answers inside long documents without reading them end to end, while keeping each answer traceable.',
+      problem:
+        'Finding answers inside long documents without reading them end to end, while keeping each answer traceable.',
       audience: null,
       objective: 'A small, provider-agnostic RAG pipeline with persistent indexes and per-session memory.',
     },
     technologies: [
       { name: 'Python', role: 'Language', usage: 'The whole pipeline and API.' },
-      { name: 'FastAPI', role: 'API layer', usage: 'Upload, index-build, chat and health endpoints with Pydantic schemas.' },
-      { name: 'LangChain', role: 'Text chunking', usage: 'langchain-text-splitters only: 1,000-character chunks with 200 overlap.' },
+      {
+        name: 'FastAPI',
+        role: 'API layer',
+        usage: 'Upload, index-build, chat and health endpoints with Pydantic schemas.',
+      },
+      {
+        name: 'LangChain',
+        role: 'Text chunking',
+        usage: 'langchain-text-splitters only: 1,000-character chunks with 200 overlap.',
+      },
       { name: 'FAISS', role: 'Vector store', usage: 'Similarity search over chunk embeddings, persisted to disk.' },
       { name: 'OpenAI', role: 'LLM and embeddings', usage: 'One of the configurable answer and embedding providers.' },
       { name: 'Mistral', role: 'LLM', usage: 'Alternative answer provider through the official SDK.' },
@@ -140,7 +168,10 @@ export const projects = [
       layers: [
         { name: 'Client', items: ['Static HTML/CSS/JS UI', 'Web Speech API'] },
         { name: 'API', items: ['FastAPI', 'Pydantic schemas'] },
-        { name: 'RAG pipeline', items: ['pypdf loader', 'Text splitter', 'Embeddings', 'Retriever (top 5)', 'Prompt + LLM client'] },
+        {
+          name: 'RAG pipeline',
+          items: ['pypdf loader', 'Text splitter', 'Embeddings', 'Retriever (top 5)', 'Prompt + LLM client'],
+        },
         { name: 'Storage', items: ['FAISS index on disk', 'Uploaded PDFs'] },
       ],
       notes: [
@@ -152,11 +183,13 @@ export const projects = [
     challenges: [
       {
         challenge: 'Keeping answers verifiable rather than free-form.',
-        solution: 'Chunk metadata (file, page, chunk id) is preserved through retrieval and returned with each answer as citations.',
+        solution:
+          'Chunk metadata (file, page, chunk id) is preserved through retrieval and returned with each answer as citations.',
       },
       {
         challenge: 'Avoiding lock-in to a single model vendor.',
-        solution: 'Answer and embedding providers are selected from environment configuration, with OpenAI, Mistral and HuggingFace options.',
+        solution:
+          'Answer and embedding providers are selected from environment configuration, with OpenAI, Mistral and HuggingFace options.',
       },
       {
         challenge: 'Conversation history growing without bound.',
@@ -166,7 +199,14 @@ export const projects = [
     planned: [],
     screenshotNote: 'Captured from the project’s own frontend running locally, without a connected backend.',
     screenshots: [
-      shot('pdf-rag-chatbot', 'rag-chat.webp', 'RaG Fast interface showing upload, build index and chat steps', 'Upload → index → chat flow', 1280, 1186),
+      shot(
+        'pdf-rag-chatbot',
+        'rag-chat.webp',
+        'RaG Fast interface showing upload, build index and chat steps',
+        'Upload → index → chat flow',
+        1280,
+        1186,
+      ),
       shot('pdf-rag-chatbot', 'speech-to-text.webp', 'RaG Fast speech-to-text tab', 'Speech-to-text tab'),
     ],
     repositories: [{ label: 'Repository', url: gh('rag_fast') }],
@@ -182,7 +222,8 @@ export const projects = [
     category: 'Mobile Applications',
     categories: ['Mobile Applications', 'AI & Machine Learning'],
     featured: true,
-    summary: 'A Flutter app that turns a spoken instruction into Python with OpenAI, then runs it through a Node.js backend.',
+    summary:
+      'A Flutter app that turns a spoken instruction into Python with OpenAI, then runs it through a Node.js backend.',
     description: [
       'Speech-to-Code lets a user speak a coding instruction, converts it to text on the device, and asks a backend to generate Python code for it. The result opens in an in-app editor with syntax highlighting, where it can be edited and executed remotely.',
       'The mobile app and the Express backend live in separate repositories.',
@@ -223,11 +264,13 @@ export const projects = [
     challenges: [
       {
         challenge: 'LLM responses mix explanation with code.',
-        solution: 'The backend extracts the fenced Python block with a regular expression and falls back to the raw text.',
+        solution:
+          'The backend extracts the fenced Python block with a regular expression and falls back to the raw text.',
       },
       {
         challenge: 'Running generated code safely enough for a demo.',
-        solution: 'Code runs in a child process with a 5-second timeout and a 1 MB output cap, and imports of os or sys are rejected. This is a basic guard, not a full sandbox.',
+        solution:
+          'Code runs in a child process with a 5-second timeout and a 1 MB output cap, and imports of os or sys are rejected. This is a basic guard, not a full sandbox.',
       },
     ],
     planned: [],
@@ -248,7 +291,8 @@ export const projects = [
     category: 'Web Development',
     categories: ['Web Development', 'Backend Development'],
     featured: true,
-    summary: 'A mock-interview app that reads questions aloud, records spoken answers, transcribes them and keeps every session.',
+    summary:
+      'A mock-interview app that reads questions aloud, records spoken answers, transcribes them and keeps every session.',
     description: [
       'A question-by-question interview practice tool. Questions are played with text-to-speech, the candidate answers out loud, and the answer is recorded and transcribed live. Completed sessions are stored so they can be reviewed later.',
       'The frontend is React 19 with Tailwind CSS v4; the backend is Django REST Framework with JWT authentication and an admin view across all users’ interviews.',
@@ -260,9 +304,17 @@ export const projects = [
       objective: 'A realistic interview flow with session history.',
     },
     technologies: [
-      { name: 'React', role: 'Frontend UI', usage: 'Interview, login and register pages built with React 19 and Vite.' },
+      {
+        name: 'React',
+        role: 'Frontend UI',
+        usage: 'Interview, login and register pages built with React 19 and Vite.',
+      },
       { name: 'Tailwind CSS', role: 'Styling', usage: 'Tailwind CSS v4.' },
-      { name: 'Web Speech API', role: 'Speech', usage: 'Speech recognition for transcripts and speech synthesis for questions, via custom hooks.' },
+      {
+        name: 'Web Speech API',
+        role: 'Speech',
+        usage: 'Speech recognition for transcripts and speech synthesis for questions, via custom hooks.',
+      },
       { name: 'Django REST Framework', role: 'API layer', usage: 'Questions, answers, sessions and admin endpoints.' },
       { name: 'JWT', role: 'Authentication', usage: 'SimpleJWT access and refresh tokens.' },
       { name: 'SQLite', role: 'Database', usage: 'Django’s default database for development.' },
@@ -295,7 +347,8 @@ export const projects = [
     challenges: [
       {
         challenge: 'Choosing where speech recognition should run.',
-        solution: 'Transcription currently happens in the browser. The backend also contains an offline PocketSphinx transcription view, but its route is disabled.',
+        solution:
+          'Transcription currently happens in the browser. The backend also contains an offline PocketSphinx transcription view, but its route is disabled.',
       },
     ],
     planned: ['Server-side offline transcription with PocketSphinx (view exists, route commented out)'],
@@ -320,7 +373,8 @@ export const projects = [
     category: 'Mobile Applications',
     categories: ['Mobile Applications'],
     featured: true,
-    summary: 'An offline-first Flutter app for routines, habits, reading and journaling, with local reminders and charts.',
+    summary:
+      'An offline-first Flutter app for routines, habits, reading and journaling, with local reminders and charts.',
     description: [
       'LifeRise is a personal growth app covering daily routine planning, habit tracking, reading, journaling, insights and a calendar history. It is backend-free: everything is stored on the device.',
       'The codebase is organised by feature, with Riverpod for state and GoRouter for navigation.',
@@ -351,11 +405,16 @@ export const projects = [
     ],
     architecture: {
       layers: [
-        { name: 'Features', items: ['Onboarding', 'Home', 'Routine', 'Habits', 'Reading', 'Journal', 'Insights', 'Calendar', 'Settings'] },
+        {
+          name: 'Features',
+          items: ['Onboarding', 'Home', 'Routine', 'Habits', 'Reading', 'Journal', 'Insights', 'Calendar', 'Settings'],
+        },
         { name: 'Core', items: ['Models', 'App state (Riverpod)', 'Notification service'] },
         { name: 'Data', items: ['SharedPreferences', 'SQLite scaffold'] },
       ],
-      notes: ['Feature-first folder structure under lib/features, with shared widgets and an app shell for navigation.'],
+      notes: [
+        'Feature-first folder structure under lib/features, with shared widgets and an app shell for navigation.',
+      ],
       endpoints: [],
     },
     challenges: [
@@ -380,7 +439,8 @@ export const projects = [
     category: 'Data Science',
     categories: ['Data Science', 'AI & Machine Learning'],
     featured: true,
-    summary: 'Jupyter notebooks that clean about a million rows of 2012–2013 business data, chart sales and profit, and test regression models.',
+    summary:
+      'Jupyter notebooks that clean about a million rows of 2012–2013 business data, chart sales and profit, and test regression models.',
     description: [
       'A set of Python notebooks analysing two years of company sales data. The work covers data cleaning (missing values, duplicates and outliers), exploratory visualisation of sales and profitability, and regression analysis.',
       'One honest result: an OLS model of profit margin against sales value and cost explained almost none of the variance (R² ≈ 0.00), which shows those two fields alone don’t predict margin.',
@@ -399,7 +459,11 @@ export const projects = [
       { name: 'Matplotlib', role: 'Visualisation', usage: 'Trend, bar and box plots.' },
       { name: 'seaborn', role: 'Visualisation', usage: 'Statistical plots.' },
       { name: 'statsmodels', role: 'Regression', usage: 'OLS regression summaries.' },
-      { name: 'scikit-learn', role: 'Modelling', usage: 'Linear regression, random forest, train/test split and metrics.' },
+      {
+        name: 'scikit-learn',
+        role: 'Modelling',
+        usage: 'Linear regression, random forest, train/test split and metrics.',
+      },
       { name: 'Jupyter', role: 'Environment', usage: 'Three task notebooks.' },
     ],
     features: [
@@ -413,7 +477,8 @@ export const projects = [
     challenges: [
       {
         challenge: 'Large, inconsistently encoded source files.',
-        solution: 'CSVs are read with ISO-8859-1 encoding and low_memory disabled; about 1.02 million rows remained after outlier removal.',
+        solution:
+          'CSVs are read with ISO-8859-1 encoding and low_memory disabled; about 1.02 million rows remained after outlier removal.',
       },
       {
         challenge: 'Separating real signal from assumption.',
@@ -423,11 +488,46 @@ export const projects = [
     planned: [],
     screenshotNote: 'Charts exported from the notebooks and committed to the repository.',
     screenshots: [
-      shot('sales-profitability-analysis', 'salestrend2012.webp', 'Line chart of total monthly sales in 2012', 'Monthly sales trend, 2012', 1280, 754),
-      shot('sales-profitability-analysis', 'profitability2013.webp', 'Bar chart of total profit by customer district code in 2013', 'Profitability by customer district, 2013', 1280, 690),
-      shot('sales-profitability-analysis', 'averageprofit.webp', 'Bar chart of average profit margin by currency in 2012', 'Average profit margin by currency, 2012', 1280, 810),
-      shot('sales-profitability-analysis', 'outliers_1.webp', 'Box plot of 2012 sales values showing outliers', 'Sales value outliers, 2012', 1280, 883),
-      shot('sales-profitability-analysis', 'regression.webp', 'Statsmodels OLS regression results table for profit margin', 'OLS regression summary', 1280, 806),
+      shot(
+        'sales-profitability-analysis',
+        'salestrend2012.webp',
+        'Line chart of total monthly sales in 2012',
+        'Monthly sales trend, 2012',
+        1280,
+        754,
+      ),
+      shot(
+        'sales-profitability-analysis',
+        'profitability2013.webp',
+        'Bar chart of total profit by customer district code in 2013',
+        'Profitability by customer district, 2013',
+        1280,
+        690,
+      ),
+      shot(
+        'sales-profitability-analysis',
+        'averageprofit.webp',
+        'Bar chart of average profit margin by currency in 2012',
+        'Average profit margin by currency, 2012',
+        1280,
+        810,
+      ),
+      shot(
+        'sales-profitability-analysis',
+        'outliers_1.webp',
+        'Box plot of 2012 sales values showing outliers',
+        'Sales value outliers, 2012',
+        1280,
+        883,
+      ),
+      shot(
+        'sales-profitability-analysis',
+        'regression.webp',
+        'Statsmodels OLS regression results table for profit margin',
+        'OLS regression summary',
+        1280,
+        806,
+      ),
     ],
     repositories: [{ label: 'Repository', url: gh('PythonTask') }],
     liveUrl: null,
@@ -442,7 +542,8 @@ export const projects = [
     category: 'AI & Machine Learning',
     categories: ['AI & Machine Learning', 'Backend Development'],
     featured: false,
-    summary: 'A Django app that extracts details from PDF, DOCX and scanned resumes and ranks candidates against a role.',
+    summary:
+      'A Django app that extracts details from PDF, DOCX and scanned resumes and ranks candidates against a role.',
     description: [
       'The Smart Resume Parser automates resume screening. It extracts text from uploaded resumes, including scanned images, pulls out entities and skills with spaCy, and filters candidates by education, minimum experience, skills and keywords.',
       'Matching candidates are scored and sorted so the strongest matches appear first.',
@@ -472,7 +573,10 @@ export const projects = [
     architecture: {
       layers: [
         { name: 'Web', items: ['Django views + templates'] },
-        { name: 'Processing', items: ['Background thread per upload', 'Text extraction', 'spaCy NER', 'Experience parser'] },
+        {
+          name: 'Processing',
+          items: ['Background thread per upload', 'Text extraction', 'spaCy NER', 'Experience parser'],
+        },
         { name: 'Data', items: ['CV model with extracted fields'] },
       ],
       notes: ['Parsing runs in a background thread so the upload request returns immediately.'],
@@ -485,7 +589,8 @@ export const projects = [
       },
       {
         challenge: 'Experience is written as free-text date ranges.',
-        solution: 'A regular expression finds ranges, including “Present”, and dateutil converts them into total months.',
+        solution:
+          'A regular expression finds ranges, including “Present”, and dateutil converts them into total months.',
       },
     ],
     planned: [],
@@ -503,7 +608,8 @@ export const projects = [
     category: 'Backend Development',
     categories: ['Backend Development', 'Data Science', 'Web Development'],
     featured: false,
-    summary: 'A Django app that schedules YellowPages scraping jobs, stores business leads in PostgreSQL and exports them.',
+    summary:
+      'A Django app that schedules YellowPages scraping jobs, stores business leads in PostgreSQL and exports them.',
     description: [
       'LeadHarvester lets a user create “notifiers”: saved YellowPages searches by keyword, category, location, frequency and page limit. A scheduler runs due notifiers, scrapes business listings and stores them as leads.',
       'Leads can be searched, filtered, paginated and exported as CSV, Excel or JSON, and a few authenticated JSON endpoints expose the same data.',
@@ -518,7 +624,11 @@ export const projects = [
       { name: 'Django', role: 'Web framework', usage: 'Templates, auth, admin and views.' },
       { name: 'PostgreSQL', role: 'Database', usage: 'Notifiers, businesses, scrape logs and seed catalogs.' },
       { name: 'Requests + BeautifulSoup', role: 'Scraping', usage: 'Fetches and parses listing pages.' },
-      { name: 'Playwright', role: 'Browser fallback', usage: 'Optional headless browser when plain requests are blocked.' },
+      {
+        name: 'Playwright',
+        role: 'Browser fallback',
+        usage: 'Optional headless browser when plain requests are blocked.',
+      },
       { name: 'APScheduler', role: 'Scheduling', usage: 'Checks for due notifiers every 30 minutes.' },
       { name: 'openpyxl', role: 'Exports', usage: 'Excel export alongside CSV and JSON.' },
       { name: 'Bootstrap', role: 'Styling', usage: 'Bootstrap 5 templates.' },
@@ -539,13 +649,21 @@ export const projects = [
         { name: 'Scraper', items: ['Requests session', 'BeautifulSoup', 'Playwright fallback'] },
         { name: 'Data', items: ['PostgreSQL', 'Exports: CSV / XLSX / JSON'] },
       ],
-      notes: ['The scheduler can run as its own management command or start inside Django when RUN_SCHEDULER is enabled.'],
-      endpoints: ['GET /api/businesses/', 'GET /api/notifiers/', 'POST /api/scrape/run/', 'GET /businesses/export/:format/'],
+      notes: [
+        'The scheduler can run as its own management command or start inside Django when RUN_SCHEDULER is enabled.',
+      ],
+      endpoints: [
+        'GET /api/businesses/',
+        'GET /api/notifiers/',
+        'POST /api/scrape/run/',
+        'GET /businesses/export/:format/',
+      ],
     },
     challenges: [
       {
         challenge: 'Public sites rate-limit and block automated traffic.',
-        solution: 'Requests use randomised delays, a warmed session, rotating browser User-Agent headers, and an optional Playwright fallback.',
+        solution:
+          'Requests use randomised delays, a warmed session, rotating browser User-Agent headers, and an optional Playwright fallback.',
       },
       {
         challenge: 'Repeated scrapes would create duplicate leads.',
@@ -567,7 +685,8 @@ export const projects = [
     category: 'AI & Machine Learning',
     categories: ['AI & Machine Learning', 'Backend Development'],
     featured: false,
-    summary: 'Streams Google Gemini responses word by word from Django to the browser with the Fetch and ReadableStream APIs.',
+    summary:
+      'Streams Google Gemini responses word by word from Django to the browser with the Fetch and ReadableStream APIs.',
     description: [
       'A focused demo of real-time LLM streaming. Django proxies a prompt to the Gemini streaming endpoint and yields the response in chunks; the vanilla JavaScript frontend reads the stream and renders text as it arrives.',
       'The repository is containerised with a Dockerfile and docker-compose, and includes a written explanation of how the streaming works.',
@@ -608,7 +727,14 @@ export const projects = [
     ],
     planned: [],
     screenshotNote: 'Captured from the project’s own frontend running locally, without a connected backend.',
-    screenshots: [shot('llm-streaming-demo', 'stream-ui.webp', 'LLM Streaming Demo prompt and response panel', 'Streaming interface')],
+    screenshots: [
+      shot(
+        'llm-streaming-demo',
+        'stream-ui.webp',
+        'LLM Streaming Demo prompt and response panel',
+        'Streaming interface',
+      ),
+    ],
     repositories: [{ label: 'Repository', url: gh('llm_stream_demo') }],
     liveUrl: null,
     primaryLanguage: 'Python',
@@ -622,7 +748,8 @@ export const projects = [
     category: 'Data Science',
     categories: ['Data Science', 'AI & Machine Learning', 'Backend Development'],
     featured: false,
-    summary: 'A Django app and REST endpoint that serve a small Keras regression model predicting house prices from four features.',
+    summary:
+      'A Django app and REST endpoint that serve a small Keras regression model predicting house prices from four features.',
     description: [
       'A learning project that puts a machine learning model behind a web interface. A TensorFlow/Keras network predicts price from size, bedrooms, bathrooms and age, and is served through a Django form and a DRF API endpoint.',
       'The training data is a 15-row sample CSV, so this demonstrates the serving pipeline rather than an accurate pricing model.',
@@ -664,7 +791,14 @@ export const projects = [
     planned: [],
     screenshotNote: 'Plot generated by the app and committed to the repository.',
     screenshots: [
-      shot('house-price-prediction', 'price-distribution.webp', 'Histogram of house prices from the sample dataset', 'Price distribution plot generated by the app', 1280, 960),
+      shot(
+        'house-price-prediction',
+        'price-distribution.webp',
+        'Histogram of house prices from the sample dataset',
+        'Price distribution plot generated by the app',
+        1280,
+        960,
+      ),
     ],
     repositories: [{ label: 'Repository', url: gh('house_prediction') }],
     liveUrl: null,

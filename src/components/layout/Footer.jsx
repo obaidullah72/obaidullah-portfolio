@@ -43,7 +43,11 @@ export default function Footer() {
               const Icon = socialIcons[social.id]
               return (
                 <li key={social.id}>
-                  <a href={social.href} {...external} className="inline-flex items-center gap-2 py-1 text-muted hover:text-fg">
+                  <a
+                    href={social.href}
+                    {...external}
+                    className="inline-flex items-center gap-2 py-1 text-muted hover:text-fg"
+                  >
                     <Icon className="size-4" />
                     {social.label}
                     <span className="font-mono text-xs text-subtle">{social.handle}</span>

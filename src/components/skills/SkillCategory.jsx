@@ -34,7 +34,10 @@ export default function SkillCategory({ category, delay = 0, compact = false }) 
       {compact ? (
         <ul className="mt-5 flex flex-wrap gap-2">
           {category.skills.map((skill) => (
-            <li key={skill.name} className="rounded-md border border-line bg-ink-950/50 px-2.5 py-1 font-mono text-xs text-[#cbd5e1]">
+            <li
+              key={skill.name}
+              className="rounded-md border border-line bg-ink-950/50 px-2.5 py-1 font-mono text-xs text-[#cbd5e1]"
+            >
               {skill.name}
             </li>
           ))}

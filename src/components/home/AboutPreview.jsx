@@ -10,12 +10,17 @@ export default function AboutPreview() {
     <section className="container-page">
       <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
         <div>
-          <SectionHeading index="02" eyebrow="About" title="An engineer who likes the whole stack, and the data behind it." className="mb-8!" />
+          <SectionHeading
+            index="02"
+            eyebrow="About"
+            title="An engineer who likes the whole stack, and the data behind it."
+            className="mb-8!"
+          />
           <Reveal className="space-y-5 text-base leading-relaxed text-pretty text-muted md:text-lg">
             <p>
               I graduated in Computer Science from Superior University in 2024 as a Gold Medalist. Since then most of my
-              work has been building complete products: a Django or FastAPI backend, a React or Flutter frontend, and the
-              authentication, storage and integrations that connect them.
+              work has been building complete products: a Django or FastAPI backend, a React or Flutter frontend, and
+              the authentication, storage and integrations that connect them.
             </p>
             <p>
               Alongside that I’ve spent several years on data science: cleaning and exploring datasets, regression and
@@ -24,7 +29,8 @@ export default function AboutPreview() {
           </Reveal>
           <Reveal className="mt-8">
             <Button to="/about" variant="secondary">
-              More about me <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              More about me{' '}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </Button>
           </Reveal>
         </div>

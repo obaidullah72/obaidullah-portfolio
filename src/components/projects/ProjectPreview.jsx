@@ -304,11 +304,16 @@ function ChartPreview() {
       <div className="p-4">
         <p className="font-mono text-[10px] text-subtle">In [12]:</p>
         <p className="mb-3 font-mono text-[10px] text-muted">
-          df.groupby(<span className="text-[#86efac]">'month'</span>)[<span className="text-[#86efac]">'sales'</span>].sum().plot()
+          df.groupby(<span className="text-[#86efac]">'month'</span>)[<span className="text-[#86efac]">'sales'</span>
+          ].sum().plot()
         </p>
         <div className="flex h-24 items-end gap-1.5 border-b border-l border-line pb-px pl-px">
           {chartBars.map((h, i) => (
-            <span key={i} className="flex-1 rounded-t-sm bg-linear-to-t from-brand/50 to-brand-bright" style={{ height: `${h}%` }} />
+            <span
+              key={i}
+              className="flex-1 rounded-t-sm bg-linear-to-t from-brand/50 to-brand-bright"
+              style={{ height: `${h}%` }}
+            />
           ))}
         </div>
         <div className="mt-3 grid grid-cols-3 gap-2 font-mono text-[9px]">

@@ -64,10 +64,9 @@ export default function About() {
               services like Gemini, OpenAI, Cloudinary and GitHub, and keeping the code organised as a project grows.
             </p>
             <p>
-              <span className="text-fg">Data science.</span> My involvement in data science goes back four to five
-              years and sits at an intermediate level: cleaning and exploring datasets with pandas, visualising them,
-              running regressions and classical models with scikit-learn and statsmodels, and serving models through
-              APIs.
+              <span className="text-fg">Data science.</span> My involvement in data science goes back four to five years
+              and sits at an intermediate level: cleaning and exploring datasets with pandas, visualising them, running
+              regressions and classical models with scikit-learn and statsmodels, and serving models through APIs.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -127,7 +126,10 @@ export default function About() {
               <h2 className="text-2xl font-semibold tracking-tight text-fg">Technical interests</h2>
               <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                 {interests.map((interest) => (
-                  <li key={interest} className="flex gap-3 rounded-xl border border-line bg-ink-900/50 p-4 text-[#cbd5e1]">
+                  <li
+                    key={interest}
+                    className="flex gap-3 rounded-xl border border-line bg-ink-900/50 p-4 text-[#cbd5e1]"
+                  >
                     <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true" />
                     {interest}
                   </li>

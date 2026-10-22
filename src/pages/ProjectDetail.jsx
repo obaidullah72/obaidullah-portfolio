@@ -170,7 +170,10 @@ function ProjectDetailContent({ project }) {
             <Reveal>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {project.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 rounded-xl border border-line bg-ink-900/40 p-4 text-[#e2e8f0]">
+                  <li
+                    key={feature}
+                    className="flex gap-3 rounded-xl border border-line bg-ink-900/40 p-4 text-[#e2e8f0]"
+                  >
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-bright" aria-hidden="true" />
                     {feature}
                   </li>
@@ -202,7 +205,9 @@ function ProjectDetailContent({ project }) {
                   </span>
                   <span>
                     <span className="block font-medium text-fg">{tech.name}</span>
-                    <span className="block font-mono text-[11px] tracking-wide text-brand-bright uppercase">{tech.role}</span>
+                    <span className="block font-mono text-[11px] tracking-wide text-brand-bright uppercase">
+                      {tech.role}
+                    </span>
                     <span className="mt-1.5 block text-sm leading-relaxed text-muted">{tech.usage}</span>
                   </span>
                 </Reveal>
@@ -222,7 +227,12 @@ function ProjectDetailContent({ project }) {
             <DetailSection id="challenges" title="Challenges and design decisions">
               <ul className="space-y-4">
                 {project.challenges.map((item, index) => (
-                  <Reveal as="li" key={item.challenge} delay={index * 0.05} className="card-surface grid gap-4 p-6 md:grid-cols-2 md:gap-8">
+                  <Reveal
+                    as="li"
+                    key={item.challenge}
+                    delay={index * 0.05}
+                    className="card-surface grid gap-4 p-6 md:grid-cols-2 md:gap-8"
+                  >
                     <div>
                       <p className="font-mono text-[11px] tracking-[0.15em] text-subtle uppercase">Challenge</p>
                       <p className="mt-2 leading-relaxed text-fg">{item.challenge}</p>
@@ -294,7 +304,9 @@ function ProjectDetailContent({ project }) {
         <div className="mt-8 flex flex-col items-start justify-between gap-6 rounded-2xl border border-line bg-ink-900/50 p-6 sm:flex-row sm:items-center md:p-8">
           <div>
             <p className="font-medium text-fg">Interested in work like this?</p>
-            <p className="mt-1 text-sm text-muted">I’m happy to talk through how it was built or what you’re planning.</p>
+            <p className="mt-1 text-sm text-muted">
+              I’m happy to talk through how it was built or what you’re planning.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Button to="/projects" variant="ghost" size="sm">

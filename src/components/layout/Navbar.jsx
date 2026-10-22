@@ -35,7 +35,9 @@ export default function Navbar() {
                   end={link.end}
                   className={({ isActive }) =>
                     `block rounded-full px-4 py-1.5 text-sm transition-colors ${
-                      isActive ? 'bg-ink-700 text-fg shadow-[inset_0_0_0_1px_rgb(96_165_250/0.25)]' : 'text-muted hover:text-fg'
+                      isActive
+                        ? 'bg-ink-700 text-fg shadow-[inset_0_0_0_1px_rgb(96_165_250/0.25)]'
+                        : 'text-muted hover:text-fg'
                     }`
                   }
                 >

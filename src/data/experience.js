@@ -9,7 +9,13 @@ export const experienceOverview = [
     level: null,
     description:
       'Building web, mobile and backend applications across university projects, freelance work and professional roles: React frontends, Django, FastAPI and Express APIs, Flutter apps and AI integrations.',
-    focus: ['Frontend engineering', 'Backend and API development', 'Full-stack applications', 'Mobile apps', 'AI-powered features'],
+    focus: [
+      'Frontend engineering',
+      'Backend and API development',
+      'Full-stack applications',
+      'Mobile apps',
+      'AI-powered features',
+    ],
   },
   {
     id: 'data',
@@ -18,7 +24,13 @@ export const experienceOverview = [
     level: 'Intermediate',
     description:
       'Involvement in data science and analytics since before graduation: cleaning and exploring datasets, visualisation, statistical testing, regression and classical machine learning, plus putting models behind APIs.',
-    focus: ['Data cleaning and EDA', 'Visualisation', 'Regression and classical ML', 'Experimentation in notebooks', 'Serving models via APIs'],
+    focus: [
+      'Data cleaning and EDA',
+      'Visualisation',
+      'Regression and classical ML',
+      'Experimentation in notebooks',
+      'Serving models via APIs',
+    ],
   },
 ]
 
@@ -53,21 +65,24 @@ export const projectTimeline = [
   {
     year: '2026',
     title: 'RAG, streaming and scheduled data collection',
-    description: 'Retrieval-augmented chat over PDFs, LLM streaming, a scheduled scraping pipeline and an offline-first Flutter app.',
+    description:
+      'Retrieval-augmented chat over PDFs, LLM streaming, a scheduled scraping pipeline and an offline-first Flutter app.',
     projects: ['pdf-rag-chatbot', 'llm-streaming-demo', 'leadharvester', 'liferise'],
     tags: ['FastAPI', 'FAISS', 'Gemini', 'PostgreSQL', 'Flutter'],
   },
   {
     year: '2025',
     title: 'Full-stack and AI applications',
-    description: 'React frontends paired with Express and Django REST backends, LLM code generation, speech interfaces, resume parsing and a served ML model.',
+    description:
+      'React frontends paired with Express and Django REST backends, LLM code generation, speech interfaces, resume parsing and a served ML model.',
     projects: ['vox', 'ai-interview-platform', 'speech-to-code', 'smart-resume-parser', 'house-price-prediction'],
     tags: ['React', 'Node.js', 'Django REST', 'OpenAI', 'spaCy'],
   },
   {
     year: '2024',
     title: 'Data analysis and Flutter apps',
-    description: 'Sales and profitability analysis in Jupyter, a series of Flutter apps with local databases, and graduation.',
+    description:
+      'Sales and profitability analysis in Jupyter, a series of Flutter apps with local databases, and graduation.',
     projects: ['sales-profitability-analysis'],
     tags: ['pandas', 'statsmodels', 'scikit-learn', 'Flutter', 'sqflite'],
   },

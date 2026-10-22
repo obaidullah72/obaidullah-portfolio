@@ -10,7 +10,11 @@ import ProjectMedia from './ProjectMedia.jsx'
 function FeaturedSlide({ project, index }) {
   return (
     <article className="card-surface grid overflow-hidden lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
-      <ProjectMedia project={project} className="aspect-[16/10] border-b border-line lg:aspect-auto lg:min-h-[26rem] lg:border-r lg:border-b-0" eager={index === 0} />
+      <ProjectMedia
+        project={project}
+        className="aspect-[16/10] border-b border-line lg:aspect-auto lg:min-h-[26rem] lg:border-r lg:border-b-0"
+        eager={index === 0}
+      />
       <div className="flex min-h-[22rem] flex-col p-6 sm:p-8 lg:p-10">
         <p className="font-mono text-xs text-brand-bright">
           <span className="text-subtle">

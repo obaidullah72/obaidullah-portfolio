@@ -49,7 +49,10 @@ export default function Skills() {
                 <p className="flex items-center gap-2 text-sm font-medium text-fg">
                   <span className="flex gap-1" aria-hidden="true">
                     {LEVELS.map((name, i) => (
-                      <span key={name} className={`h-1.5 w-3 rounded-full ${i <= index ? 'bg-brand-bright' : 'bg-ink-600'}`} />
+                      <span
+                        key={name}
+                        className={`h-1.5 w-3 rounded-full ${i <= index ? 'bg-brand-bright' : 'bg-ink-600'}`}
+                      />
                     ))}
                   </span>
                   {level}

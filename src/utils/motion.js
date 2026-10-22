@@ -11,4 +11,8 @@ export const stagger = (staggerChildren = 0.07, delayChildren = 0) => ({
   visible: { transition: { staggerChildren, delayChildren } },
 })
 
-export const inView = { initial: 'hidden', whileInView: 'visible', viewport: { once: true, margin: '0px 0px -60px 0px' } }
+export const inView = {
+  initial: 'hidden',
+  whileInView: 'visible',
+  viewport: { once: true, margin: '0px 0px -60px 0px' },
+}

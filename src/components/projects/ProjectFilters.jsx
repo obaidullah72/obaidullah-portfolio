@@ -30,7 +30,10 @@ export default function ProjectFilters({ category, technology, query, onChange, 
       <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,16rem)]">
         <label className="relative block">
           <span className="sr-only">Search projects by title or technology</span>
-          <Search className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-subtle" aria-hidden="true" />
+          <Search
+            className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-subtle"
+            aria-hidden="true"
+          />
           <input
             type="search"
             value={query}
@@ -53,7 +56,10 @@ export default function ProjectFilters({ category, technology, query, onChange, 
               </option>
             ))}
           </select>
-          <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-subtle" aria-hidden="true">
+          <span
+            className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-subtle"
+            aria-hidden="true"
+          >
             ▾
           </span>
         </label>

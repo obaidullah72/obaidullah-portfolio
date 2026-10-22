@@ -68,7 +68,12 @@ export default function Projects() {
             <SearchX className="size-8 text-subtle" aria-hidden="true" />
             <h2 className="mt-4 text-lg font-semibold text-fg">No projects match those filters</h2>
             <p className="mt-2 max-w-sm text-sm text-muted">Try a different search term or clear the filters.</p>
-            <Button className="mt-6" variant="secondary" size="sm" onClick={() => updateFilters({ category: '', tech: '', q: '' })}>
+            <Button
+              className="mt-6"
+              variant="secondary"
+              size="sm"
+              onClick={() => updateFilters({ category: '', tech: '', q: '' })}
+            >
               Clear filters
             </Button>
           </div>

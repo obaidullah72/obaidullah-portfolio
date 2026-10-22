@@ -59,7 +59,10 @@ export default function Experience() {
                   <p className="mt-3 leading-relaxed text-muted">{track.description}</p>
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {track.focus.map((item) => (
-                      <li key={item} className="rounded-md border border-line bg-ink-950/50 px-2.5 py-1 text-xs text-[#cbd5e1]">
+                      <li
+                        key={item}
+                        className="rounded-md border border-line bg-ink-950/50 px-2.5 py-1 text-xs text-[#cbd5e1]"
+                      >
                         {item}
                       </li>
                     ))}
